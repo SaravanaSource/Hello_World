@@ -3,6 +3,9 @@ name: CI Pipeline
 on:
   push:
     branches: ["main"]
+    tags:
+    - "release-*"
+
   pull_request:
     branches: ["main"]
 
@@ -189,7 +192,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
-      
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
