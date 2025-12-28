@@ -127,7 +127,7 @@ jobs:
 
       - name: Push Docker image to GHCR
         run: |
-          docker push ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
+          docker push ghcr.io/${{ steps.normalize.outputs.owner_lower }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
 
 
   deploy-staging:
