@@ -21,6 +21,9 @@ jobs:
       - name: Check index.html
         run: test -f website/index.html
 
+      - name: Check environment
+        run: ./scripts/validate_env.sh
+
   lint:
     name: Lint HTML
     runs-on: ubuntu-latest
