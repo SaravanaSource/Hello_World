@@ -147,18 +147,18 @@ jobs:
         id: normalize
         run: |
           OWNER_LOWER=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')
-          echo "owner=$OWNER_LOWER" >> $GITHUB_OUTPUT
+          echo "owner_lower=$OWNER_LOWER" >> $GITHUB_OUTPUT
 
       - name: Pull Docker image
         run: |
-          docker pull ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
+          docker pull ghcr.io/${{ steps.normalize.outputs.owner_lower }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
 
       - name: Run container (staging)
         run: |
           docker run -d \
             --name natural-tea-staging \
             -p 8080:80 \
-            ghcr.io/${{ steps.normalize.outputs.owner }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
+            ghcr.io/${{ steps.normalize.outputs.owner_lower }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
 
       - name: Verify application is running
         run: |
@@ -170,3 +170,4 @@ jobs:
         run: |
           docker stop natural-tea-staging
           docker rm natural-tea-staging
+          
