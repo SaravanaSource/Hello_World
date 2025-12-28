@@ -178,24 +178,21 @@ jobs:
           docker stop natural-tea-staging
           docker rm natural-tea-staging
 
+
   deploy-pages:
     name: Deploy Website (GitHub Pages)
     runs-on: ubuntu-latest
     needs: deploy-staging
-
-    permissions:
-      pages: write
-      id-token: write
-
+    # CRITICAL: This condition prevents PRs from triggering the deployment rejection
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: website-${{ needs.deploy-staging.outputs.build_version }}
+          name: website-${{ needs.build.outputs.build_version }}
           path: dist
 
       - name: Upload Pages artifact
