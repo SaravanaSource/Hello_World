@@ -1,0 +1,95 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #2f2f2f;
+  background-color: #ffffff;
+}
+
+/* Utility */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+.site-header {
+  background-color: #1f3d2b;
+  color: #ffffff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Hero */
+.hero {
+  background-color: #e7f3ec;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 0;
+}
+
+.section.light {
+  background-color: #f9f9f9;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  color: #1f3d2b;
+}
+
+/* Features */
+.features {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.features li {
+  margin-bottom: 0.5rem;
+}
+
+/* Contact */
+.contact p {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #1f3d2b;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer .small {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
