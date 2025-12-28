@@ -6,9 +6,9 @@ on:
   pull_request:
     branches: ["main"]
 
-  permissions:
-    contents: read
-    packages: write
+permissions:
+  contents: read
+  packages: write
 
 jobs:
 
@@ -119,7 +119,7 @@ jobs:
           docker build \
             -t ghcr.io/${{ github.repository }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }} \
             .
-            
+
       - name: Push Docker image to GHCR
         run: |
           docker push ghcr.io/${{ github.repository }}/natural-tea:${{ needs.verify-artifact.outputs.build_version }}
