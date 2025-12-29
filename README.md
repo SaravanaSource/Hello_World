@@ -127,6 +127,13 @@ This project serves as:
 - Cloud-native deployment
 - Monitoring and backups
 
+
+## Project Status
+
+- Phase 0: ✅ Completed
+- Phase 1: ✅ Completed (Static Website + Analytics)
+- Phase 2: ⏳ Planned (React / Next.js Migration)
+
 ---
 
 ## License
